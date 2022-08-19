@@ -1,5 +1,5 @@
-opencv-boilerplate
-==================
+opencv-playground
+=================
 Work-in-progress
 
 ### Prerequisites
