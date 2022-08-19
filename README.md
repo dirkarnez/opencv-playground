@@ -1,6 +1,7 @@
 opencv-playground
 =================
 ~~Work-in-progress~~
+Fully working
 
 ### Prerequisites
 1. Download prebuilt OpenCV
