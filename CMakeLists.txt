@@ -13,21 +13,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(opencv-playground)
 
-# set(OpenCV_STATIC ON)
+### Must set
+set(OpenCV_STATIC ON)
 
 # target_copy_libraries(target items...)
-macro(target_copy_libraries target)
-  foreach(arg IN ITEMS ${ARGN})
-    add_custom_command(
-      TARGET ${target} POST_BUILD
-      COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_FILE:${arg}> $<TARGET_FILE_DIR:${target}>
-    )
-  endforeach()
-endmacro()
+# macro(target_copy_libraries target)
+#   foreach(arg IN ITEMS ${ARGN})
+#     add_custom_command(
+#       TARGET ${target} POST_BUILD
+#       COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_FILE:${arg}> $<TARGET_FILE_DIR:${target}>
+#     )
+#   endforeach()
+# endmacro()
 
-find_package(OpenCV 4.5.5 EXACT REQUIRED  PATHS 
-    "D:\\Code Projects\\cpp-libraries\\OpenCV-MinGW-Build-OpenCV-4.5.5-x64"
-)
+find_package(OpenCV 4.5.5 EXACT REQUIRED PATHS "D:\\Code Projects\\cpp-libraries\\opencv-v4.5.5-winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1")
 
 add_executable(${PROJECT_NAME}
     "src/main.cpp"    
@@ -38,13 +37,14 @@ add_executable(${PROJECT_NAME}
 # )
 
 # find_package(Threads REQUIRED)
-# SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")
+
+SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")
 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${OpenCV_LIBS})
-target_copy_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
-file( COPY  "${CMAKE_CXX_COMPILER}/../libstdc++-6.dll" DESTINATION "${CMAKE_BINARY_DIR}")
-file( COPY  "${CMAKE_CXX_COMPILER}/../libgcc_s_seh-1.dll" DESTINATION "${CMAKE_BINARY_DIR}")
-file( COPY  "${CMAKE_CXX_COMPILER}/../libwinpthread-1.dll" DESTINATION "${CMAKE_BINARY_DIR}") 
+# target_copy_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
+# file( COPY  "${CMAKE_CXX_COMPILER}/../libstdc++-6.dll" DESTINATION "${CMAKE_BINARY_DIR}")
+# file( COPY  "${CMAKE_CXX_COMPILER}/../libgcc_s_seh-1.dll" DESTINATION "${CMAKE_BINARY_DIR}")
+# file( COPY  "${CMAKE_CXX_COMPILER}/../libwinpthread-1.dll" DESTINATION "${CMAKE_BINARY_DIR}") 
     # libopencv_core
     # opencv_core 
     # opencv_flann 
