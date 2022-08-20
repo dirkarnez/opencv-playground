@@ -26,7 +26,7 @@ set(OpenCV_STATIC ON)
 #   endforeach()
 # endmacro()
 
-find_package(OpenCV 4.5.5 EXACT REQUIRED PATHS "D:\\Code Projects\\cpp-libraries\\opencv-v4.5.5-winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1")
+find_package(OpenCV 4.6.0 EXACT REQUIRED PATHS "D:\\Code Projects\\cpp-libraries\\opencv-ce14c3cff856ad0f56fb14a5e59f9bb9849555903-winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1")
 
 add_executable(${PROJECT_NAME}
     "src/main.cpp"    
