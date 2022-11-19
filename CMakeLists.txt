@@ -26,7 +26,7 @@ set(OpenCV_STATIC ON)
 #   endforeach()
 # endmacro()
 
-find_package(OpenCV 4.6.0 EXACT REQUIRED PATHS "D:\\Code Projects\\cpp-libraries\\opencv-ce14c3cff856ad0f56fb14a5e59f9bb9849555903-winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1")
+find_package(OpenCV CONFIG 4.6.0 EXACT REQUIRED)
 
 add_executable(${PROJECT_NAME}
     "src/main.cpp"    
@@ -41,6 +41,7 @@ add_executable(${PROJECT_NAME}
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")
 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${OpenCV_LIBS})
+
 # target_copy_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 # file( COPY  "${CMAKE_CXX_COMPILER}/../libstdc++-6.dll" DESTINATION "${CMAKE_BINARY_DIR}")
 # file( COPY  "${CMAKE_CXX_COMPILER}/../libgcc_s_seh-1.dll" DESTINATION "${CMAKE_BINARY_DIR}")

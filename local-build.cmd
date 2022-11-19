@@ -1,22 +1,22 @@
 REM run as Administrator
 @echo off
 cd /d %~dp0
-@REM set DOWNLOAD_DIR=%USERPROFILE%\Downloads
-@REM set DOWNLOAD_DIR_LINUX=%DOWNLOAD_DIR:\=/%
 
-@REM SET PATH=^
-@REM %DOWNLOAD_DIR%\PortableGit\bin;^
-@REM %DOWNLOAD_DIR%\x86_64-8.1.0-release-win32-seh-rt_v6-rev0;^
-@REM %DOWNLOAD_DIR%\x86_64-8.1.0-release-win32-seh-rt_v6-rev0\bin;^
-@REM %DOWNLOAD_DIR%\cmake-3.22.2-windows-x86_64\bin;
+set DOWNLOADS_DIR=%USERPROFILE%\Downloads
+set DOWNLOADS_DIR_LINUX=%DOWNLOADS_DIR:\=/%
 
-set PATH=^
-D:\Softwares\winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1\mingw64;^
-D:\Softwares\winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1\mingw64\bin;^
-D:\Softwares\cmake-3.23.0-rc1-windows-x86_64\bin;
+SET PATH=^
+%DOWNLOADS_DIR%\PortableGit\bin;^
+%DOWNLOADS_DIR%\winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1\mingw64;^
+%DOWNLOADS_DIR%\winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1\mingw64\bin;^
+%DOWNLOADS_DIR%\cmake-3.22.2-windows-x86_64\bin;
 
-cmake.exe -G"MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug ^
--B./build &&^
+@REM set PATH=^
+@REM D:\Softwares\winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1\mingw64;^
+@REM D:\Softwares\winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1\mingw64\bin;^
+@REM D:\Softwares\cmake-3.23.0-rc1-windows-x86_64\bin;
+
+cmake.exe -G"MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DOpenCV_DIR="%DOWNLOADS_DIR_LINUX%/opencv-ce14c3cff856ad0f56fb14a5e59f9bb9849555903-winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1" -B./build &&^
 cd build &&^
 cmake --build . &&^
 echo "Successful build"

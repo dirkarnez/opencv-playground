@@ -4,7 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "D:\\Code Projects\\cpp-libraries\\OpenCV-MinGW-Build-OpenCV-4.5.5-x64\\include\\**"
+                "${env:USERPROFILE}\\Downloads\\opencv-ce14c3cff856ad0f56fb14a5e59f9bb9849555903-winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1\\include\\**"
+                
             ],
             "defines": [
                 "_DEBUG",
@@ -12,10 +13,10 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.19041.0",
-            "compilerPath": "D:\\Softwares\\winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1\\mingw64\\bin\\gcc.exe",
+            "compilerPath": "${env:USERPROFILE}\\Downloads\\winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1\\mingw64\\bin\\gcc.exe",
             "cStandard": "c11",
             "cppStandard": "c++11",
-            "intelliSenseMode": "windows-msvc-x64"
+            "intelliSenseMode": "${default}"
         }
     ],
     "version": 4
