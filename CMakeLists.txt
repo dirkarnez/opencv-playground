@@ -26,7 +26,7 @@ set(OpenCV_STATIC ON)
 #   endforeach()
 # endmacro()
 
-find_package(OpenCV CONFIG 4.6.0 EXACT REQUIRED)
+find_package(OpenCV CONFIG 4.8.0 EXACT REQUIRED)
 
 add_executable(${PROJECT_NAME}
     "src/main.cpp"    
