@@ -11,7 +11,7 @@ jobs:
     name: Create Release
     runs-on: windows-latest
     env:
-      mingwTargetZip: opencv-playground-${{ github.ref_name }}-mingw64-x86_64-posix-seh-rev0-8.1.0.zip
+      mingwTargetZip: opencv-playground-${{ github.ref_name }}-winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1.zip
     steps:
       - uses: actions/checkout@v3
 
