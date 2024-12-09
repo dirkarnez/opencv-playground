@@ -11,3 +11,6 @@ Fully working with static build
 
 ### CMake
 - https://github.com/wpilibsuite/allwpilib/blob/main/cameraserver/CMakeLists.txt
+
+### Tutorials
+- [Video-Analytics-OpenCV/tutorials/opencv/Python/sample_05_opencl/README.md at master · intel-iot-devkit/Video-Analytics-OpenCV](https://github.com/intel-iot-devkit/Video-Analytics-OpenCV/blob/master/tutorials/opencv/Python/sample_05_opencl/README.md)
